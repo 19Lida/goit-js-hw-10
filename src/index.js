@@ -52,8 +52,14 @@ function onCountry(countries) {
   if (countries.length === 1) {
     const markup = countries
       .map(({ flags, name, capital, population, languages }) => {
-        return `<div> <img src="${flags.svg}" alt="" width="50" height="50">
-  <h2>${name.official}</h2>>
+        let lang = '';
+        for (let key in languages) {
+          lang = languages[key];
+        }
+        return `<div> <img src="${flags.svg}" alt="${
+          name.official
+        }" width="100" height="70">
+  
   <p>Capital: ${capital}</p>
   <p>Population: ${population}</p>
   <p>Language: ${Object.values(languages)}</p>
