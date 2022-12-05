@@ -50,6 +50,7 @@ function onCountry(countries) {
     refs.countryList.innerHTML = list;
   }
   if (countries.length === 1) {
+    console.log(countries);
     const markup = countries
       .map(({ flags, name, capital, population, languages }) => {
         let lang = '';
@@ -58,11 +59,12 @@ function onCountry(countries) {
         }
         return `<div> <img src="${flags.svg}" alt="${
           name.official
-        }" width="100" height="70">
+        }" width="70" height="50">
   
   <p>Capital: ${capital}</p>
   <p>Population: ${population}</p>
-  <p>Language: ${Object.values(languages)}</p>
+  <p>Language: ${Object.values(languages).map(lang => lang)}</p>
+
   </div>`;
       })
       .join('');

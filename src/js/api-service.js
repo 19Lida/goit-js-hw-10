@@ -2,7 +2,7 @@ export { fetchCountries };
 
 function fetchCountries(nameCountry) {
   return fetch(
-    `https://restcountries.com/v3.1/name/${nameCountry}?fields=name,capital,population,language,flags`
+    `https://restcountries.com/v3.1/name/${nameCountry}?fields=name,capital,population,languages,flags`
   ).then(response => {
     if (!response.ok) {
       throw new Error(response.status);
